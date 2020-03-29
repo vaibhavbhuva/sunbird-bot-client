@@ -3,19 +3,20 @@
     box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.4);
     border-radius: 0 18px 18px 18px;
     overflow: hidden;
-    margin: 16px 0;
-    max-width: 80%;
+    margin: 0.5rem 0;
+    max-width: 96%;
     display: flex;
+    font-size: 12px;
 
     &.recieved{
         align-self: flex-start;
         background: #fff;
-        color: var(--tertiary-color);
+        color: #000;
     }
     &.sent{
         align-self: flex-end;
         border-radius: 15px 0 15px 15px;
         background: var(--primary-color);
-        color: var(--secondary-color);
+        color: #FFF;
     }
 }
