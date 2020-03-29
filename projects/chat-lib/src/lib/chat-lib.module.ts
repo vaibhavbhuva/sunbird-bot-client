@@ -9,6 +9,6 @@ import { ChatMessageBottomBarComponent } from './chat-message-bottom-bar/chat-me
   declarations: [ChatLibComponent, ChatWindowComponent, ChatMessageListComponent, ChatMessageComponent, ChatMessageBottomBarComponent],
   imports: [
   ],
-  exports: [ChatLibComponent]
+  exports: [ChatLibComponent,ChatLibComponent, ChatWindowComponent, ChatMessageListComponent, ChatMessageComponent, ChatMessageBottomBarComponent]
 })
 export class ChatLibModule { }
