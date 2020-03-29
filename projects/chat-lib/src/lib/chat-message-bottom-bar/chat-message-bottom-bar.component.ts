@@ -38,10 +38,10 @@ export class ChatMessageBottomBarComponent implements OnInit {
       this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
         console.log(data)
         this.chatService.chatListPush('recieved', data.text)
-      }),err => {
+      },err => {
         console.log(err)
         this.chatService.chatListPush('recieved', err.error.text)
-      };
+      });
     }
     }
 }
