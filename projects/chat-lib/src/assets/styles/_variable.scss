@@ -1,0 +1,14 @@
+:root {
+
+    --blue: #3D79CB;
+    --white: #ffffff;
+    --black: #000000;
+    --light-bg: #F5F5F5;
+    --primary-color: var(--blue);
+    --secondary-color: var(--white);
+    --tertiary-color: var(--orange);
+}
+// brand Colors
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$tertiary-color: var(--tertiary-color);

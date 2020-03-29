@@ -1,0 +1,58 @@
+@import "../../assets/styles/_styles.scss";
+.lib-chat-head {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 3rem;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    right: 6rem;
+    z-index: 100;
+}
+.expand {
+    bottom: 36rem;
+    right: 25rem;
+}
+.lib-chat-panel{
+    display: flex;
+    flex-direction: column;
+    width: 24rem;
+    background: var(--secondary-color);
+}
+.lib-chat-header {
+    height: 2.6rem;
+    // width: 100%;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 16px;
+    color: #fff;
+    position: relative;
+    .heading {
+        margin-left: 16px;
+    }
+    .close-container {
+        position: absolute;
+        right: 6px;
+        top: 7px;
+        background: rgba(255,255,255,.3);
+        padding: 3px;
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        justify-content: center;
+    }
+}
+
+.lib-chat-body {
+    max-height: 30em;
+    width: 100%;
+    background-color: var(--light-bg);
+    overflow-y: scroll;
+}
+.lib-chat-footer {
+    height: 3.5em;
+    width: 100%;
+    border-top: 1px solid #ddd;
+}

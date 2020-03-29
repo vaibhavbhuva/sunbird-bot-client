@@ -1,12 +1,21 @@
 <div class="lib-chat-head" [ngClass]="{'expand': !collapsed}">
   <span *ngIf="collapsed===true" (click)="expandChatIntent()">
-    <img src="chat_bubble.svg"/>
+    <img src="chat_bubble.svg" />
   </span>
   <div *ngIf="collapsed===false">
     <div class="lib-chat-panel" (click)="collapseChatIntent()">
       <div class="lib-chat-header">
+          <div>
+            <i></i>
+            <span class="heading">Welcome to our chatbot</span>
+          </div>
+          <span class="close-container">
+            <i></i>
+            close
+          </span>
       </div>
       <div class="lib-chat-body">
+        <lib-chat-message-list></lib-chat-message-list>
       </div>
       <div class="lib-chat-footer">
       </div>

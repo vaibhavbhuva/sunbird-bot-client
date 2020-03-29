@@ -1,3 +1,7 @@
-<p>
-  chat-message-list works!
-</p>
+<div class="messages-container">
+  <ng-container *ngFor="let msg of array">
+    <lib-chat-message [ngClass]="{ 'recieved': msg.type==='recieved', 'sent': msg.type==='sent' }" [data]="msg">
+  
+    </lib-chat-message>
+  </ng-container>
+</div>

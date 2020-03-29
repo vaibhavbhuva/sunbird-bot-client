@@ -1,3 +1,4 @@
-<p>
-  chat-message works!
-</p>
+
+<div class="chat-msg " [ngClass]="{ 'recieved': data.type==='recieved', 'sent': data.type==='sent' }">
+  {{data.text}}
+</div>
