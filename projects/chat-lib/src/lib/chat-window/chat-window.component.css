@@ -9,11 +9,12 @@
     z-index: 100;
 }
 .expand {
-    bottom: 30rem;
+    bottom: 36rem;
     right: 25rem;
 }
 .lib-chat-panel{
     width: 22rem;
+    background: #ffffff;
 }
 .lib-chat-header {
     height: 4.6rem;
@@ -21,11 +22,11 @@
     background: blue;
 }
 .lib-chat-body {
-    height: 60em;
+    height: 30em;
     width: 100%;
-    background: #ffffff;
 }
 .lib-chat-footer {
     height: 3.5em;
     width: 100%;
+    border-top:1px solid;
 }
