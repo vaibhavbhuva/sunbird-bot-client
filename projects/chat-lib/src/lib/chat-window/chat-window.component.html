@@ -3,8 +3,8 @@
     <img src="../chat-window/chat_bubble.svg"/>
   </span>
   <div *ngIf="collapsed===false">
-    <div class="lib-chat-panel" (click)="collapseChatIntent()">
-      <div class="lib-chat-header">
+    <div class="lib-chat-panel">
+      <div class="lib-chat-header" (click)="collapseChatIntent()">
         <div class="lib-chat-header-image">
           <img src="../chat-window/chat_bubble.svg"/>
         </div>
@@ -13,6 +13,7 @@
       <div class="lib-chat-body">
       </div>
       <div class="lib-chat-footer">
+        <lib-chat-message-bottom-bar></lib-chat-message-bottom-bar>
       </div>
     </div>
   </div>

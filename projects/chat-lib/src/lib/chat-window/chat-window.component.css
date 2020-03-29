@@ -40,3 +40,6 @@
 .lib-chat-header-image, .lib-chat-header-title{
     display: inline-block;
 }
+*, *::before, *::after {
+    box-sizing: border-box;
+}
