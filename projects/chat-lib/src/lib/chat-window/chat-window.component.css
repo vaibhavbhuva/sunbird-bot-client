@@ -14,7 +14,7 @@
 }
 .lib-chat-panel{
     width: 22rem;
-    background: #ffffff;
+    background: #F5F5F5;
 }
 .lib-chat-header {
     height: 4.6rem;
@@ -28,5 +28,5 @@
 .lib-chat-footer {
     height: 3.5em;
     width: 100%;
-    border-top:1px solid;
+    background: #FFF;
 }
