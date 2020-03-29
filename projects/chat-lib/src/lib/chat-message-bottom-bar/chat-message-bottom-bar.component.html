@@ -1,3 +1,9 @@
 <p>
   chat-message-bottom-bar works!
 </p>
+
+<form [formGroup]="messageForm" (submit)="sendMessage()">
+  <label>Send: </label>
+  <input type="text" [formControlName]="message">
+  <button type="submit">Send</button>
+</form>
