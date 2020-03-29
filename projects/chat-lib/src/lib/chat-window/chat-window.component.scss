@@ -56,3 +56,17 @@
     width: 100%;
     border-top: 1px solid #ddd;
 }
+
+.lib-chat-header-title {
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: bold;
+    width:80%;
+}
+.lib-chat-header-image, .lib-chat-header-title{
+    display: inline-block;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
