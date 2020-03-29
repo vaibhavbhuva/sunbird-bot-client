@@ -1,27 +1,33 @@
-# ChatbotClient
+# Common angular components for Sunbird consumption!
+Contains common UI components powered by angular. These components are designed to be used in Chat Bot platforms *(hybird mobile app, web portal, any browser based apps)* to drive reusability, maintainability hence reducing the redundant development effort significantly.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
+# Getting Started
+For help getting started with a new Angular app, check out the Angular CLI.
+For existing apps, follow these steps to begin using .
 
-## Development server
+## Step 1: Install the package
+    npm install @project-sunbird/common-consumption --save
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Step 3: Import the modules and components
+Import the NgModule for each component you want to use:
+       
+    import { ChatLibModule} from '';
+    
+    @NgModule({
+	    ...
+	    
+	    imports: [ChatLibModule],
+	    
+	    ...
+    })
+    export class TestAppModule { }
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Available components
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+|Feature| Notes| Selector|
+|--|--|--|
+| [Chat Window](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Chat Window for Chat Bot | lib-chat-window|
+| [Chat Message List](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Chat Messages Get Listed in Widget | lib-chat-message-list|
+| [Chat Message](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Library Chat Message Component |lib-chat-message|
+| [Chat Message Bottom Bar](https://github.com/Sunbird-Ed/SunbirdEd-consumption-ngcomponents) | Can be used in the course page for all consumption platforms|lib-chat-message-bottom-bar|
