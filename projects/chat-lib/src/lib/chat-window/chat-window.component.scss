@@ -13,11 +13,23 @@
     bottom: 36rem;
     right: 25rem;
 }
+.close-container img {
+    width: 20px !important;
+    height: 20px !important;
+}
 .lib-chat-panel{
     display: flex;
     flex-direction: column;
     width: 24rem;
     background: #FFF;
+}
+
+.c-head img {
+    position: absolute;
+    top: 1.3em;
+    left: 1.35em;
+    width: 28px;
+    height: 28px;
 }
 .lib-chat-header {
     height: 4.6rem;
@@ -29,6 +41,10 @@
     padding: 16px;
     color: #fff;
     position: relative;
+    img {
+        width: 24px;
+        height: 24px;
+    }
     .heading {
         margin-left: 16px;
     }

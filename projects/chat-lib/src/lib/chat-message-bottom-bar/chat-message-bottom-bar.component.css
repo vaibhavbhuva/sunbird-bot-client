@@ -1,4 +1,13 @@
 textarea {
-    width: 75%;
+    width: 85%;
     border: none;
+}
+.send {
+    display: inline-block;
+    float: right;
+    margin: 12px;
+}
+.send img {
+    width: 28px;
+    height: 28px;
 }
