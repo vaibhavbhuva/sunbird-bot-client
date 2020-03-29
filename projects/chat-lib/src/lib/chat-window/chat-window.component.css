@@ -1,19 +1,19 @@
 .lib-chat-head {
-    height: 3em;
-    width: 3em;
-    border-radius: 3em;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 3rem;
     background: blue;
     position: absolute;
     bottom: 0;
-    right: 100px;
+    right: 6rem;
     z-index: 100;
 }
 .expand {
-    bottom: 450px;
-    right: 400px;
+    bottom: 30rem;
+    right: 25rem;
 }
 .lib-chat-header {
-    height: 3em;
-    width: 18em;
+    height: 4.6rem;
+    width: 22rem;
     background: blue;
 }
