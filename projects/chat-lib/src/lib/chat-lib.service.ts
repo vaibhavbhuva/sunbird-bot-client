@@ -13,12 +13,14 @@ export class ChatLibService {
 
   http: HttpClient;
   public chatList = [];
-
+  public UUID ;
   constructor(http: HttpClient) {
     this.http = http;
+    this.UUID = Date.now();
   }
 
   chatpost(req?: any): Observable<any> {
+    req.data['from'] = this.UUID;
     return this.http.post(this.baseUrl, req.data).pipe(
       mergeMap((data: any) => {
         if (data.responseCode !== 'OK') {
@@ -29,8 +31,8 @@ export class ChatLibService {
   }
   chatListPush(source, msg) {
     const chat = {
-      'msg': msg,
-      'source': source
+      'text': msg,
+      'type': source
     }
     this.chatList.push(chat);
   }
