@@ -1,0 +1,19 @@
+.lib-chat-head {
+    height: 3em;
+    width: 3em;
+    border-radius: 3em;
+    background: blue;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+    z-index: 100;
+}
+.expand {
+    bottom: 450px;
+    right: 400px;
+}
+.lib-chat-header {
+    height: 3em;
+    width: 18em;
+    background: blue;
+}
