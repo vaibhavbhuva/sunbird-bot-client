@@ -30,7 +30,8 @@ export class ChatMessageBottomBarComponent implements OnInit {
     let msg = this.messageForm.controls.message.value;
     if(msg) { 
       this.chatService.chatListPush('sent',msg);
-      const req = {
+      this.messageForm.controls.message.reset();
+;      const req = {
         data: {
           body: msg
           }

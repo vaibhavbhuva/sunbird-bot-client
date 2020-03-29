@@ -20,7 +20,7 @@ export class ChatLibService {
   }
 
   chatpost(req?: any): Observable<any> {
-    req.data['from'] = this.UUID;
+    req.data['from'] = (this.UUID).toString();
     return this.http.post(this.baseUrl, req.data).pipe(
       mergeMap((data: any) => {
         if (data.responseCode !== 'OK') {

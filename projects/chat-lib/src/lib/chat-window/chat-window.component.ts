@@ -8,8 +8,6 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ChatWindowComponent implements OnInit {
 
   @Input() collapsed:boolean = true;
-
-  
   constructor() { }
 
   ngOnInit() {
