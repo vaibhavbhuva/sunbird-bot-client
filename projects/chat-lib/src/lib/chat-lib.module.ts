@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChatWindowComponent } from './chat-window/chat-window.component';
 import { ChatMessageListComponent } from './chat-message-list/chat-message-list.component';
@@ -10,7 +10,13 @@ import { ChatLibService } from './chat-lib.service';
   imports: [
     CommonModule
   ],
-  providers : [ChatLibService],
   exports: [ChatWindowComponent, ChatMessageListComponent, ChatMessageComponent, ChatMessageBottomBarComponent]
 })
-export class ChatLibModule { }
+export class ChatLibModule { 
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: ChatLibModule,
+      providers: [ChatLibService]
+    };
+  }
+}

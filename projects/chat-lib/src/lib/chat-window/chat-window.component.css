@@ -20,6 +20,7 @@
     height: 4.6rem;
     width: 100%;
     background: blue;
+    padding: 1.5rem;
 }
 .lib-chat-body {
     height: 30em;
@@ -29,4 +30,13 @@
     height: 3.5em;
     width: 100%;
     background: #FFF;
+}
+.lib-chat-header-title {
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: bold;
+    width:80%;
+}
+.lib-chat-header-image, .lib-chat-header-title{
+    display: inline-block;
 }
