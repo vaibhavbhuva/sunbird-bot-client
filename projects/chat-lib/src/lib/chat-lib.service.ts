@@ -2,7 +2,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { of as observableOf, throwError as observableThrowError, Observable } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class ChatLibService {
 
   baseUrl: string = 'http://52.173.240.27:4000/bot';
