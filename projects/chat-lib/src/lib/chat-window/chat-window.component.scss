@@ -3,7 +3,7 @@
     height: 4.4rem;
     width: 4.4rem;
     border-radius: 4.4rem;
-    background: var(--primary-color);
+    background: #3D79CB;
     position: absolute;
     bottom: 0;
     right: 6rem;
@@ -34,7 +34,7 @@
 .lib-chat-header {
     height: 4.6rem;
     // width: 100%;
-    background: var(--primary-color);
+    background: #3D79CB;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -64,8 +64,8 @@
 .lib-chat-body {
     height: 32em;
     width: 100%;
-    background-color: var(--light-bg);
-    overflow-y: scroll;
+    background-color: #F5F5F5;
+    overflow-y: hidden;
 }
 .lib-chat-footer {
     height: 3.5em;

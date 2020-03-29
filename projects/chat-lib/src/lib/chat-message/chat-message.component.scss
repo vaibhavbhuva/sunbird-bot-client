@@ -1,5 +1,5 @@
 .chat-msg{
-    padding: 12px;
+    padding: 12px 16px;
     box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.4);
     border-radius: 0 18px 18px 18px;
     overflow: hidden;
@@ -16,7 +16,7 @@
     &.sent{
         align-self: flex-end;
         border-radius: 15px 0 15px 15px;
-        background: var(--primary-color);
+        background: #3D79CB;
         color: #FFF;
     }
 }
