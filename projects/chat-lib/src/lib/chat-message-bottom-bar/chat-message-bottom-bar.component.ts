@@ -33,7 +33,7 @@ export class ChatMessageBottomBarComponent implements OnInit {
       this.messageForm.controls.message.reset();
 ;      const req = {
         data: {
-          body: msg
+          Body: msg
           }
         }
       this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
