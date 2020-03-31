@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 })
 export class ChatLibService {
 
-  baseUrl: string = 'http://52.173.240.27:4000/bot';
+  baseUrl: string = 'https://chatapi.diksha.gov.in/bot';
 
   http: HttpClient;
   public chatList = [];
