@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, ViewChild, ElementRef } from '@angular/core';
 import { ChatLibService } from '../chat-lib.service';
 @Component({
   selector: 'lib-chat-message-list',
   templateUrl: './chat-message-list.component.html',
   styleUrls: ['./chat-message-list.component.scss']
 })
-export class ChatMessageListComponent implements OnInit {
+export class ChatMessageListComponent implements OnInit, AfterViewChecked {
+  @ViewChild('msgScrollToBottom') private msgScrollToBottom: ElementRef;
+
   public array = [
     // {
     //   type: 'sent',
@@ -34,6 +36,18 @@ export class ChatMessageListComponent implements OnInit {
   ngOnInit() {
     this.array = this.chatService.chatList;
 
+  }
+
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom(): void {
+    try {
+      this.msgScrollToBottom.nativeElement.scrollTop = this.msgScrollToBottom.nativeElement.scrollHeight;
+    } catch (err) { 
+      
+    }
   }
 
 }

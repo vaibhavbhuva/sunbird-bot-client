@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'lib-chat-window',
@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ChatWindowComponent implements OnInit {
 
-  @Input() collapsed:boolean = true;
+  @Input() collapsed = true;
+
   constructor() { }
 
   ngOnInit() {

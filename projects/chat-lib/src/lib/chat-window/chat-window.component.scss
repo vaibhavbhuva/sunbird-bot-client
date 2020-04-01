@@ -3,16 +3,25 @@
     height: 4.4rem;
     width: 4.4rem;
     border-radius: 4.4rem;
-    background: #3D79CB;
+    background: #024F9D;
     position: fixed;
     bottom: 0;
     right: 6rem;
     bottom: 1rem;
     z-index: 100;
+    box-shadow: 0px 6px 16px 0px rgba(0,0,0,.24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.expand {
-    bottom: 36rem;
-    right: 25rem;
+.lib-chat-expand {
+    position: fixed;
+    right: 6rem;
+    bottom: 20px;
+    box-shadow: 0 6px 16px 0 rgba(0,0,0,.24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .close-container img {
     width: 20px !important;
@@ -23,19 +32,24 @@
     flex-direction: column;
     width: 24rem;
     background: #FFF;
+    box-shadow: 0px 4px 36px 0px rgba(0,0,0,.24);
+}
+
+.c-head{
+    display: flex;
 }
 
 .c-head img {
-    position: absolute;
-    top: 1.3em;
-    left: 1.35em;
-    width: 28px;
-    height: 28px;
+    // position: absolute;
+    // top: 1.3em;
+    // left: 1.35em;
+    width: 30px;
+    height: 30px;
 }
 .lib-chat-header {
     height: 4.6rem;
     // width: 100%;
-    background: #3D79CB;
+    background: #024F9D;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -43,16 +57,14 @@
     color: #fff;
     position: relative;
     img {
-        width: 24px;
-        height: 24px;
+        height: 30px;
     }
     .heading {
-        margin-left: 16px;
+        margin-left: 12px;
+        flex: 1 1 auto;
     }
     .close-container {
-        position: absolute;
-        right: 6px;
-        top: 7px;
+
         background: rgba(255,255,255,.3);
         padding: 3px;
         display: flex;
@@ -63,13 +75,13 @@
 }
 
 .lib-chat-body {
-    height: 32em;
+    height: 32rem;
     width: 100%;
     background-color: #F5F5F5;
     overflow-y: hidden;
 }
 .lib-chat-footer {
-    height: 3.5em;
+    height: 3.5rem;
     width: 100%;
     border-top: 1px solid #ddd;
 }
@@ -87,3 +99,14 @@
     box-sizing: border-box;
 }
 
+.clickable{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .lib-chat-expand {
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+  }

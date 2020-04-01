@@ -1,4 +1,4 @@
-<div class="messages-container">
+<div #msgScrollToBottom class="messages-container" id="msgContainer">
   <ng-container *ngFor="let msg of array">
     <lib-chat-message [ngClass]="{ 'recieved': msg.type==='recieved', 'sent': msg.type==='sent' }" [data]="msg">
   
