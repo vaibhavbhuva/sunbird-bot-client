@@ -41,10 +41,10 @@
     //     }
     // }
     &::-webkit-scrollbar-thumb {
-      background-color: #eee;
+      background-color: #A5A5A5;
     }
     &::-webkit-scrollbar-track {
       -webkit-box-shadow: inset 0 0 calculateRem(6px) rgba(0, 0, 0, 0);
-      background-color: #bbb;
+      background-color: #DCDCDC;
     }
   }
