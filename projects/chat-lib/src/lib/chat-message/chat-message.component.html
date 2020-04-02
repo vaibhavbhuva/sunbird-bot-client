@@ -1,4 +1,4 @@
 
-<div class="chat-msg " [ngClass]="{ 'recieved': data.type==='recieved', 'sent': data.type==='sent' }">
-  {{data.text}}
+<div class="chat-msg " [ngClass]="{ 'recieved': data.type==='recieved', 'sent': data.type==='sent' }" [innerHTML]="data.text">
+  
 </div>

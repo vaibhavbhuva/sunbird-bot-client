@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 150;
 }
 .lib-chat-expand {
     position: fixed;
@@ -22,6 +23,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 150;
 }
 .close-container img {
     width: 20px !important;
