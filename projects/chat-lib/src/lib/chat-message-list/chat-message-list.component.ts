@@ -20,7 +20,7 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
     if (this.array.length === 0 ) {
 ;      const req = {
         data: {
-          Body: "Hello"
+          Body: "chatbot-init"
           }
         }
       this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
