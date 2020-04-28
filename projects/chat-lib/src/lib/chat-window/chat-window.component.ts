@@ -8,6 +8,8 @@ import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 export class ChatWindowComponent implements OnInit {
 
   @Input() collapsed = true;
+  @Input() did: string;
+  @Input() uuid: string;
 
   constructor() { }
 

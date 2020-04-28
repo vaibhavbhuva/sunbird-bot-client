@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, ViewChild, ElementRef, Input } from '@angular/core';
 import { ChatLibService } from '../chat-lib.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject} from 'rxjs';
@@ -9,6 +9,9 @@ import { Subject} from 'rxjs';
 })
 export class ChatMessageListComponent implements OnInit, AfterViewChecked {
   @ViewChild('msgScrollToBottom') private msgScrollToBottom: ElementRef;
+  
+  @Input() did: string;
+  @Input() uuid: string;
 
   public array = [
   ];
@@ -17,6 +20,8 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
 
   ngOnInit() {
     this.array = this.chatService.chatList;
+    this.chatService.UUID = this.uuid || null;
+    this.chatService.did = this.did || null;
     if (this.array.length === 0 ) {
 ;      const req = {
         data: {

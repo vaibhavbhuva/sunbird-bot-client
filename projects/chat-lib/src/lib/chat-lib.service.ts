@@ -14,13 +14,17 @@ export class ChatLibService {
   http: HttpClient;
   public chatList = [];
   public UUID ;
+  public did;
   constructor(http: HttpClient) {
     this.http = http;
-    this.UUID = Date.now();
   }
 
   chatpost(req?: any): Observable<any> {
-    req.data['From'] = (this.UUID).toString();
+    if(!this.did) {
+      this.did = Date.now();
+    }
+    req.uid = this.UUID;
+    req.data['From'] = (this.did).toString();
     return this.http.post(this.baseUrl, req.data).pipe(
       mergeMap((data: any) => {
         if (data.responseCode !== 'OK') {
