@@ -23,7 +23,7 @@ export class ChatLibService {
     if(!this.did) {
       this.did = Date.now();
     }
-    req.uid = this.UUID;
+    req.data['uuid'] = this.UUID;
     req.data['From'] = (this.did).toString();
     return this.http.post(this.baseUrl, req.data).pipe(
       mergeMap((data: any) => {
