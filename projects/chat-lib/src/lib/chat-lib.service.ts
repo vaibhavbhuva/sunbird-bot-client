@@ -15,6 +15,8 @@ export class ChatLibService {
   public chatList = [];
   public userId ;
   public did;
+  public appId;
+  public channel;
   constructor(http: HttpClient) {
     this.http = http;
   }
@@ -24,6 +26,8 @@ export class ChatLibService {
       this.did = Date.now();
     }
     req.data['userId'] = this.userId;
+    req.data['appId'] = this.appId;
+    req.data['channel'] = this.channel;
     req.data['From'] = (this.did).toString();
     return this.http.post(this.baseUrl, req.data).pipe(
       mergeMap((data: any) => {

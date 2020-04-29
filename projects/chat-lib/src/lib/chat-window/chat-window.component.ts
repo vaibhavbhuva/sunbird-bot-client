@@ -10,6 +10,8 @@ export class ChatWindowComponent implements OnInit {
   @Input() collapsed = true;
   @Input() did: string;
   @Input() userId: string;
+  @Input() channel: string;
+  @Input() appId: string;
 
   constructor() { }
 
