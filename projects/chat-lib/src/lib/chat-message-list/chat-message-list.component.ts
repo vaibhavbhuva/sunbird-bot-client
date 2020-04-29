@@ -11,7 +11,7 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
   @ViewChild('msgScrollToBottom') private msgScrollToBottom: ElementRef;
   
   @Input() did: string;
-  @Input() uuid: string;
+  @Input() userId: string;
 
   public array = [
   ];
@@ -20,7 +20,7 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
 
   ngOnInit() {
     this.array = this.chatService.chatList;
-    this.chatService.UUID = this.uuid || null;
+    this.chatService.userId = this.userId || null;
     this.chatService.did = this.did || null;
     if (this.array.length === 0 ) {
 ;      const req = {

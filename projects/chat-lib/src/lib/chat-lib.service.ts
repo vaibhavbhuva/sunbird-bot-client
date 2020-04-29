@@ -13,7 +13,7 @@ export class ChatLibService {
 
   http: HttpClient;
   public chatList = [];
-  public UUID ;
+  public userId ;
   public did;
   constructor(http: HttpClient) {
     this.http = http;
@@ -23,7 +23,7 @@ export class ChatLibService {
     if(!this.did) {
       this.did = Date.now();
     }
-    req.data['uuid'] = this.UUID;
+    req.data['userId'] = this.userId;
     req.data['From'] = (this.did).toString();
     return this.http.post(this.baseUrl, req.data).pipe(
       mergeMap((data: any) => {
