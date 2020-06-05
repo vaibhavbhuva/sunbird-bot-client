@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 })
 export class ChatLibService {
 
-  baseUrl: string = 'https://chatapi.diksha.gov.in/bot';
+  baseUrl: string ;
 
   http: HttpClient;
   public chatList = [];
@@ -17,6 +17,8 @@ export class ChatLibService {
   public did;
   public appId;
   public channel;
+  public chatbotUrl;
+
   constructor(http: HttpClient) {
     this.http = http;
   }
@@ -29,6 +31,7 @@ export class ChatLibService {
     req.data['appId'] = this.appId;
     req.data['channel'] = this.channel;
     req.data['From'] = (this.did).toString();
+    this.baseUrl = this.chatbotUrl;
     return this.http.post(this.baseUrl, req.data).pipe(
       mergeMap((data: any) => {
         if (data.responseCode !== 'OK') {
