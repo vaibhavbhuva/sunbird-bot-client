@@ -9,8 +9,6 @@ import { Injectable } from '@angular/core';
 })
 export class ChatLibService {
 
-  baseUrl: string ;
-
   http: HttpClient;
   public chatList = [];
   public userId ;
@@ -31,8 +29,7 @@ export class ChatLibService {
     req.data['appId'] = this.appId;
     req.data['channel'] = this.channel;
     req.data['From'] = (this.did).toString();
-    this.baseUrl = this.chatbotUrl;
-    return this.http.post(this.baseUrl, req.data).pipe(
+    return this.http.post(this.chatbotUrl, req.data).pipe(
       mergeMap((data: any) => {
         if (data.responseCode !== 'OK') {
           return observableThrowError(data);
