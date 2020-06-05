@@ -1,15 +1,12 @@
 @import "../../assets/styles/_styles.scss";
 .lib-chat-head {
-    height: 3.8rem;
-    width: 3.8rem;
-    border-radius: 3.8rem;
-    background: #024F9D;
+    height: 6.563rem;
+    width: 13.625rem;
     position: fixed;
     bottom: 0;
     right: 2rem;
     bottom: 1rem;
     z-index: 1000;
-    box-shadow: 0px 6px 16px 0px rgba(0,0,0,.24);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,11 +39,7 @@
 }
 
 .c-head img {
-    // position: absolute;
-    // top: 1.3em;
-    // left: 1.35em;
-    width: 30px;
-    height: 30px;
+    height: 105px;
 }
 .lib-chat-header {
     height: 4.6rem;
@@ -59,7 +52,7 @@
     color: #fff;
     position: relative;
     img {
-        height: 30px;
+        height: 70px;
     }
     .heading {
         margin-left: 12px;
@@ -119,3 +112,47 @@
     }
 
   }
+
+.chatbox-cover{
+    display: flex;
+    align-items: flex-start;
+    .chatbox{
+        box-sizing: border-box;
+        border: 1px solid #024F9D;
+        background-color: #FFFFFF;
+        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+        position: relative;
+        border-radius: 0.3rem;
+        margin-top: 25px;
+        & ::after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 14px;
+            right: -4px;
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            border-right: 1px solid #024f9d;
+            border-bottom: 1px solid #024f9d;
+            -moz-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            border-radius: 2px;
+        }
+    }
+    .chatboxText {
+        text-align: center;
+        color: #024f9d;
+        font-family: "Noto Sans";
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 22px;
+        padding: .4rem 0.6rem;
+    }
+    .chatboxImg{
+        width: 88px;
+        margin-left: -5px;
+    }
+}
+

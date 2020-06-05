@@ -14,6 +14,8 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
   @Input() userId: string;
   @Input() channel: string;
   @Input() appId: string;
+  @Input() chatbotUrl:string;
+
   public array = [
   ];
   public unsubscribe$ = new Subject<void>();
@@ -25,6 +27,8 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
     this.chatService.did = this.did || null;
     this.chatService.channel = this.channel || null;
     this.chatService.appId = this.appId || null;
+    this.chatService.chatbotUrl = this.chatbotUrl || null;
+    
     if (this.array.length === 0 ) {
 ;      const req = {
         data: {

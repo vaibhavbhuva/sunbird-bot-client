@@ -1,18 +1,21 @@
-<div class="" [ngClass]="{'lib-chat-expand': !collapsed, 'lib-chat-head': collapsed}">
-  <div class="c-head clickable" *ngIf="collapsed===true" (click)="expandChatIntent()">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAPKADAAQAAAABAAAAPAAAAACoF8tmAAADWElEQVRoBe2aP2gUQRTGc8FCkMREFCEqGFAUTJFYKsKBjSBobGzS2AiCImm0EU2Q2AsGG7W0UCxOtBSNaCFBklKsEpVIMKCGKIKF62/Ag73JzubN3Gxu55wHH5mdee9775s/N8deOjqixRmIM9CWM5AkyUnwDoRkcxQ7krcgFdMggYuMbTeNl7h/pVKpdJvqyxOcmIIC6N+J6IWsOjuzOtu5b4NUHDNm3A1SjqL8OH5qNfsk/P/dCkfBkm0Rsk9c4ZBXT1K7+FNaQsan5Sh+myW+Qp+XXA5TQl+RmzfBiB0n45goq4UTvP2InrcIyXX1eYaruZncB4fdQ1dH+hR8czV90z3LMNSaZkkReNvSbLsa228I7iroSeVwbc4TWIP3uyuBVRzFN5hV8Do7U+hCQ7FJssNUgs8tbcpRqv4ouFTLUUAx3laYMzQI5rSz1OzjC9+avQmmsHGwG/i0KjN2xiehT8FFXR9eeb3dw6zCKOgBVeDj+/QHeNQ9XONv8aYfvuIzumeg1ngPm6bP5xk25ShVfxRsWg7OyV1w3DTein7q2Qauklt/RfvHuh6ITPaNgdtgwJrUUwC5e8EtYDL7n4hgem9iS/VP0T7tSYeIhnznwddUDXpzSUSkO8FyEDzX2QzPi/RfB/rW0mmdn+EeAjMgz6YZPOScpB4IyTHwOC9TauwR7QP1WB9/4TuX4teby3Soyd7jI1cDB6R7wTUwC9ayezhsbSBweIBjMifRGGNdDrT2ISQaAHdAnn1iUL32cTJiTfxvGNvnRNpsEIm3gCtgCZjM+jqD6IGB7HKzNXuLp8CLQH2AZdlRaSKCn2UQqOvwsJRj3fwoqhs8zSh4WlIEcQ8zYr/Qt18S3zIfCpzQCl9TMP7q01a3FTpa9iXHagIpdAR8BK/BYF4w4yeAbj/oKN82zhMiGUPULqDu07T94uGIJD44H4S9Siv91z4bnBBJwYi7kCH2viQ2OB+E9gF1TtM2E5wQacGofJJWSvs36JfGB+WHsFOaWPV4IygRNsUiTn/TOGsTH5QvYi+p5dQsjC8XtjONyF7wUxM7acsTjD9ChzWx6rGwNyX6xLTiNe0mrYgJfk75rPW1zyOruRHU35i8pW3894T2UR2VxBmIMxBnwHEG/gIY03I8m4KDyAAAAABJRU5ErkJggg=="/>
+<div class="" [ngClass]="{'lib-chat-expand': !collapsed, 'lib-chat-head': collapsed}">  
+  <div class="chatbox-cover clickable" *ngIf="collapsed===true" (click)="expandChatIntent()">
+    <div class="chatbox">
+      <div class="chatboxText">{{title}}</div>
+    </div>
+    <img class="chatboxImg" [src]="imageUrl"/>
   </div>
   <div *ngIf="collapsed===false">
     <div class="lib-chat-panel">
       <div class="lib-chat-header" >
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAPKADAAQAAAABAAAAPAAAAACoF8tmAAADWElEQVRoBe2aP2gUQRTGc8FCkMREFCEqGFAUTJFYKsKBjSBobGzS2AiCImm0EU2Q2AsGG7W0UCxOtBSNaCFBklKsEpVIMKCGKIKF62/Ag73JzubN3Gxu55wHH5mdee9775s/N8deOjqixRmIM9CWM5AkyUnwDoRkcxQ7krcgFdMggYuMbTeNl7h/pVKpdJvqyxOcmIIC6N+J6IWsOjuzOtu5b4NUHDNm3A1SjqL8OH5qNfsk/P/dCkfBkm0Rsk9c4ZBXT1K7+FNaQsan5Sh+myW+Qp+XXA5TQl+RmzfBiB0n45goq4UTvP2InrcIyXX1eYaruZncB4fdQ1dH+hR8czV90z3LMNSaZkkReNvSbLsa228I7iroSeVwbc4TWIP3uyuBVRzFN5hV8Do7U+hCQ7FJssNUgs8tbcpRqv4ouFTLUUAx3laYMzQI5rSz1OzjC9+avQmmsHGwG/i0KjN2xiehT8FFXR9eeb3dw6zCKOgBVeDj+/QHeNQ9XONv8aYfvuIzumeg1ngPm6bP5xk25ShVfxRsWg7OyV1w3DTein7q2Qauklt/RfvHuh6ITPaNgdtgwJrUUwC5e8EtYDL7n4hgem9iS/VP0T7tSYeIhnznwddUDXpzSUSkO8FyEDzX2QzPi/RfB/rW0mmdn+EeAjMgz6YZPOScpB4IyTHwOC9TauwR7QP1WB9/4TuX4teby3Soyd7jI1cDB6R7wTUwC9ayezhsbSBweIBjMifRGGNdDrT2ISQaAHdAnn1iUL32cTJiTfxvGNvnRNpsEIm3gCtgCZjM+jqD6IGB7HKzNXuLp8CLQH2AZdlRaSKCn2UQqOvwsJRj3fwoqhs8zSh4WlIEcQ8zYr/Qt18S3zIfCpzQCl9TMP7q01a3FTpa9iXHagIpdAR8BK/BYF4w4yeAbj/oKN82zhMiGUPULqDu07T94uGIJD44H4S9Siv91z4bnBBJwYi7kCH2viQ2OB+E9gF1TtM2E5wQacGofJJWSvs36JfGB+WHsFOaWPV4IygRNsUiTn/TOGsTH5QvYi+p5dQsjC8XtjONyF7wUxM7acsTjD9ChzWx6rGwNyX6xLTiNe0mrYgJfk75rPW1zyOruRHU35i8pW3894T2UR2VxBmIMxBnwHEG/gIY03I8m4KDyAAAAABJRU5ErkJggg=="/>
-          <span class="heading">DIKSHA VANI</span>
+          <img [src]="imageUrl"/>
+          <span class="heading">{{title}}</span>
           <span class="close-container clickable" (click)="collapseChatIntent()">
             <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAJKADAAQAAAABAAAAJAAAAAAJxsHGAAAA30lEQVRYCe2VYQrDMAiFy06Qo+z+f5YbbTdI3wMFC62x0Do2DIghNfHzRZplqVEKlAKlQCnwJwqMMRrsBXtGS2Ks7GnRPeE4HNxhHG/YFIoxEgs3ejhRNFASfHg6hguF7xaGe6YFRDk2cZLIhUqDUTIPKh3Gg/oajAPFvuK4r2c0+ZFHcjav9tQlMI+jZCfWh4m1c7OcMBV17DWpUu4v4Ra0HRhenb2+PKg9GK06HcqDSYeKwKRCAUgfVzbv9G2SArTRu8Je5pGgCdQURpMKFAtpula+FCgFSoFS4NcVWAGK4NpYw1/dMAAAAABJRU5ErkJggg=="/>
           </span>
       </div>
       <div class="lib-chat-body">
-        <lib-chat-message-list [did]="did" [userId]="userId" [channel]="channel" [appId]="appId" ></lib-chat-message-list>
+        <lib-chat-message-list [did]="did" [userId]="userId" [channel]="channel" [appId]="appId" [chatbotUrl]="chatbotUrl"></lib-chat-message-list>
       </div>
       <div class="lib-chat-footer">
         <lib-chat-message-bottom-bar></lib-chat-message-bottom-bar>
