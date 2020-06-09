@@ -15,6 +15,7 @@ export class ChatWindowComponent implements OnInit {
   @Input() title: string;
   @Input() imageUrl: string;
   @Input() chatbotUrl: string;
+  @Input() context: string;
 
   constructor() { }
 

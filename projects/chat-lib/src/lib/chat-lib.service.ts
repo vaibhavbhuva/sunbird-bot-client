@@ -16,6 +16,7 @@ export class ChatLibService {
   public appId;
   public channel;
   public chatbotUrl;
+  public context;
 
   constructor(http: HttpClient) {
     this.http = http;
@@ -29,6 +30,8 @@ export class ChatLibService {
     req.data['appId'] = this.appId;
     req.data['channel'] = this.channel;
     req.data['From'] = (this.did).toString();
+    req.data['context'] = this.context;
+
     return this.http.post(this.chatbotUrl, req.data).pipe(
       mergeMap((data: any) => {
         if (data.responseCode !== 'OK') {
