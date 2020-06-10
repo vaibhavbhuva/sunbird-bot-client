@@ -13,7 +13,6 @@ export class ChatWindowComponent implements OnInit {
   textbox = 'chatboxDefault'
   ngOnInit() {
     this.inputValues.collapsed = true;
-
     this.inputValues.title ? this.inputValues.title : this.inputValues.title = "default"
     if (this.inputValues.imageUrl) {
       this.inputValues.imageUrl = this.inputValues.imageUrl;

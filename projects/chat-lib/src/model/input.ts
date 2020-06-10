@@ -1,5 +1,5 @@
 export class  InputValues {
-    collapsed: boolean;
+    collapsed?: boolean;
     did: string;
     userId: string;
     channel: string;

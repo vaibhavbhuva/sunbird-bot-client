@@ -23,10 +23,6 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
   constructor(public chatService: ChatLibService) { }
 
   ngOnInit() {
-console.log("did--",this.did);
-console.log("chatbotUrl--",this.chatbotUrl)
-
-
     this.array = this.chatService.chatList;
     this.chatService.userId = this.userId || null;
     this.chatService.did = this.did || null;
