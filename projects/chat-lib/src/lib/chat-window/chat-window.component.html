@@ -1,16 +1,16 @@
-<div [ngClass]="textbox">
-  <div [ngClass]="{'lib-chat-expand': !inputValues.collapsed, 'lib-chat-head': inputValues.collapsed}">
+<div [ngClass]="{'chatboxDefault' : !isImageFromSrc, 'chat_bot': isImageFromSrc}">
+  <div [ngClass]="{'lib-chat-expand' : !inputValues.collapsed, 'lib-chat-head': inputValues.collapsed}">
     <div class="chatbox-cover clickable" *ngIf="inputValues.collapsed===true" (click)="expandChatIntent()">
       <div class="chatbox">
         <div class="chatboxText">{{inputValues.title}}</div>
       </div>
-      <img [ngClass]="imageClass" [src]="inputValues.imageUrl" />
+      <img [ngClass]="{'defaultImg': !isImageFromSrc, 'chatboxImg' : isImageFromSrc}" [src]="inputValues.imageUrl" />
     </div>
     <div *ngIf="inputValues.collapsed===false">
       <div class="lib-chat-panel">
         <div class="lib-chat-header">
           <img [src]="inputValues.imageUrl" />
-          <span class="heading">{{inputValues.title}}</span>
+          <span class="heading">{{inputValues.header}}</span>
           <span class="close-container clickable" (click)="collapseChatIntent()">
             <img
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAJKADAAQAAAABAAAAJAAAAAAJxsHGAAAA30lEQVRYCe2VYQrDMAiFy06Qo+z+f5YbbTdI3wMFC62x0Do2DIghNfHzRZplqVEKlAKlQCnwJwqMMRrsBXtGS2Ks7GnRPeE4HNxhHG/YFIoxEgs3ejhRNFASfHg6hguF7xaGe6YFRDk2cZLIhUqDUTIPKh3Gg/oajAPFvuK4r2c0+ZFHcjav9tQlMI+jZCfWh4m1c7OcMBV17DWpUu4v4Ra0HRhenb2+PKg9GK06HcqDSYeKwKRCAUgfVzbv9G2SArTRu8Je5pGgCdQURpMKFAtpula+FCgFSoFS4NcVWAGK4NpYw1/dMAAAAABJRU5ErkJggg==" />
