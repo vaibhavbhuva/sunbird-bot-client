@@ -154,5 +154,26 @@
         width: 88px;
         margin-left: -5px;
     }
+    .defaultImg{
+        height: 3.8rem;
+        width: 3.8rem;
+        border-radius: 3.8rem;
+        background: #024F9D;
+        box-shadow: 0px 6px 16px 0px rgba(0,0,0,.24); 
+        padding: 0.8rem 0.7rem 0.7rem 0.7rem;
+    }
+    
 }
-
+.chatboxDefault{
+    .chatboxText{
+        display:none;
+     }
+     .chatbox{
+         border:none;
+     }
+     .lib-chat-header{
+         img{
+             height:40px;
+         }
+     }
+}
