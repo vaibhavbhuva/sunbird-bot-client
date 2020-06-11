@@ -9,8 +9,17 @@ jobs:
       - run: npm install -g @angular/cli
       - run: npm install
       - run: ng build
-      - run: npm pack ~/project/dist/chat-lib
    
+      - run:
+          name: Publish to NPM
+          command: |
+            if [ -z $CIRCLE_PR_NUMBER ]; then 
+              npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+              npm pack ~/project/dist/chat-lib
+              npm publish sunbird-chatbot-client-*     
+            else
+              echo "Nothing to publish!" 
+            fi
 workflows:
   version: 2.1
   build_and_test:
