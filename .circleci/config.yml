@@ -1,0 +1,17 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/project
+    docker:
+      - image: node:10.13.0-jessie 
+    steps:
+      - run: npm install -g @angular/cli
+      - run: npm install
+      - run: ng build
+      - run: npm pack dist/chat-lib
+   
+workflows:
+  version: 2.1
+  build_and_test:
+    jobs:
+      - build
