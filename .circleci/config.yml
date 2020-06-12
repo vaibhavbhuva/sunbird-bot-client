@@ -29,3 +29,5 @@ workflows:
           filters:
             branches:
               only: /release\/.*/
+            tags:
+              only: /release\/.*/
