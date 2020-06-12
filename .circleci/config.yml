@@ -29,6 +29,6 @@ workflows:
       - build:
           filters:
             tags:
-              only: /release\/.*/
+              only: /release\-.*/
             branches:
-              only: /release\/.*/
+              only: /release\.*/
