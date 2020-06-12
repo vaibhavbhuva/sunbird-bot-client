@@ -25,3 +25,6 @@ workflows:
   build_and_test:
     jobs:
       - build
+          filters:
+            tags:
+              only: /release\/.*/
