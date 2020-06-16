@@ -31,4 +31,4 @@ workflows:
             tags:
               only: /release\-.*/
             branches:
-              only: /release\.*/
+              only: /nobuilds\.*/
