@@ -1,7 +1,5 @@
 @import "../../assets/styles/_styles.scss";
 .lib-chat-head {
-    height: 6.563rem;
-    width: 13.625rem;
     position: fixed;
     bottom: 0;
     right: 2rem;
@@ -33,17 +31,14 @@
     background: #FFF;
     box-shadow: 0px 4px 36px 0px rgba(0,0,0,.24);
 }
-
 .c-head{
     display: flex;
 }
-
 .c-head img {
     height: 105px;
 }
 .lib-chat-header {
     height: 4.6rem;
-    // width: 100%;
     background: #024F9D;
     display: flex;
     align-items: center;
@@ -55,11 +50,10 @@
         height: 70px;
     }
     .heading {
-        margin-left: 12px;
+        margin-left: 0.5rem;
         flex: 1 1 auto;
     }
     .close-container {
-
         background: rgba(255,255,255,.3);
         padding: 3px;
         display: flex;
@@ -68,7 +62,6 @@
         justify-content: center;
     }
 }
-
 .lib-chat-body {
     height: 28rem;
     width: 100%;
@@ -80,7 +73,6 @@
     width: 100%;
     border-top: 1px solid #ddd;
 }
-
 .lib-chat-header-title {
     color: #FFF;
     font-size: 1rem;
@@ -93,11 +85,9 @@
 *, *::before, *::after {
     box-sizing: border-box;
 }
-
 .clickable{
     cursor: pointer;
 }
-
 @media only screen and (max-width: 600px) {
     .lib-chat-expand {
         left: 0;
@@ -112,7 +102,6 @@
     }
 
   }
-
 .chatbox-cover{
     display: flex;
     align-items: flex-start;
@@ -155,14 +144,11 @@
         margin-left: -5px;
     }
     .defaultImg{
-        height: 3.8rem;
-        width: 3.8rem;
         border-radius: 3.8rem;
         background: #024F9D;
         box-shadow: 0px 6px 16px 0px rgba(0,0,0,.24); 
         padding: 0.8rem 0.7rem 0.7rem 0.7rem;
     }
-    
 }
 .chatboxDefault{
     .chatboxText{
