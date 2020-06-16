@@ -20,8 +20,15 @@ jobs:
             else
               echo "Nothing to publish!" 
             fi
+
+
 workflows:
   version: 2.1
   build_and_test:
     jobs:
-      - build
+      - build:
+          filters:
+            tags:
+              only: /release\-.*/
+            branches:
+              only: /nobuilds\.*/
