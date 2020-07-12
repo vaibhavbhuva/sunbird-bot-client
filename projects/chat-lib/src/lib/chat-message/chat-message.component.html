@@ -1,4 +1,17 @@
 
-<div class="chat-msg " [ngClass]="{ 'recieved': data.type==='recieved', 'sent': data.type==='sent' }" [innerHTML]="data.text">
+<div >
+    <div class="chat-msg " [ngClass]="{ 'recieved': data.type==='recieved', 'sent': data.type==='sent' }" >
+        <div [innerHTML]="data.text">
+            <!-- {{data.text}} -->
+        </div>
+        <div *ngIf="isButtonAvailable" class="btn-cover my-5px">
+            <div class="my-5px mr-5px" *ngFor='let btn of buttons; let indx = index'>
+                <button type="button" class="btn-primary" value="1" (click)="buttonClicked(indx+1,btn.text)">{{btn.text}}</button>
+            </div>
+        </div>
+    </div>
   
+    
+    <!-- <div class="chat-msg " [ngClass]="{ 'recieved': data.type==='recieved', 'sent': data.type==='sent' }" [innerHTML]="data.button"></div> -->
+    <!-- <button value="1">{{data.button}}</button> -->
 </div>

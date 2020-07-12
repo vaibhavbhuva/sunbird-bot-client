@@ -31,18 +31,22 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
     this.chatService.chatbotUrl = this.chatbotUrl || null;
     this.chatService.context = this.context || null;
     
+    console.log("inside the chat-list-message nad array lenght is ", this.array.length)
     if (this.array.length === 0 ) {
       const req = {
         data: {
           Body: "0"
           }
         }
+        console.log("before calling the api")
       this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
-        console.log(data)
-        this.chatService.chatListPush('recieved', data.text)
+        console.log("called service")
+        console.log("data",data)
+        console.log("data.buttons",data.data.buttons)
+        this.chatService.chatListPushRevised('recieved', data)
       },err => {
-        console.log(err)
-        this.chatService.chatListPush('recieved', err.error.text)
+        console.log("error-->",err)
+        this.chatService.chatListPushRevised('recieved', err.error.data)
       });
     }
   }

@@ -29,19 +29,21 @@ export class ChatMessageBottomBarComponent implements OnInit {
   sendMessage() {
     let msg = this.messageForm.controls.message.value;
     if(msg) { 
+      console.log("msg in bottom-bar-->",msg)
       this.chatService.chatListPush('sent',msg);
       this.messageForm.controls.message.reset();
-;      const req = {
+      const req = {
         data: {
           Body: msg
           }
         }
+        console.log("calling from bottom-bar-->")
       this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
-        console.log(data)
-        this.chatService.chatListPush('recieved', data.text)
+        console.log("data in bottom bar-->",data)
+        this.chatService.chatListPushRevised('recieved', data)
       },err => {
-        console.log(err)
-        this.chatService.chatListPush('recieved', err.error.text)
+        console.log("error in bottom bat-->",err)
+        this.chatService.chatListPushRevised('recieved', err.error)
       });
     }
     }

@@ -7,6 +7,7 @@
     max-width: 96%;
     display: flex;
     font-size: 12px;
+    flex-direction: column;
 
     &.recieved{
         align-self: flex-start;
@@ -20,3 +21,27 @@
         color: #FFF;
     }
 }
+.btn-primary{
+    background: #ffffff;
+    border: solid 1px #024f9d;
+    color: #024f9d;
+    padding: 8px 12px;
+    border-radius: 3px;
+    font-size: 11px;
+    &:hover{
+        background: #024f9d;
+        color: #ffffff;
+    }
+}
+.mr-5px{
+    margin-right: 5px;
+}
+.my-5px{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.btn-cover {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+} 
