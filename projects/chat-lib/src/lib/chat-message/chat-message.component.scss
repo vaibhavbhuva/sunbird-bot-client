@@ -43,5 +43,9 @@
 .btn-cover {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 } 
+button:disabled{
+    border: solid 1px rgb(153, 151, 151) !important;
+    color: rgb(153, 151, 151) !important;
+    background: #fff !important;
+}

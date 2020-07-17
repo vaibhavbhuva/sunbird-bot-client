@@ -19,17 +19,11 @@ export class ChatMessageBottomBarComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.initialiseForm();
   }
-  // initialiseForm () {
-  //   this.messageForm = new FormGroup({
-  //     message: new FormControl('', Validators.required)
-  //   });
-  // }
+
   sendMessage() {
     let msg = this.messageForm.controls.message.value;
     if(msg) { 
-      console.log("msg in bottom-bar-->",msg)
       this.chatService.chatListPush('sent',msg);
       this.messageForm.controls.message.reset();
       const req = {
@@ -37,12 +31,12 @@ export class ChatMessageBottomBarComponent implements OnInit {
           Body: msg
           }
         }
-        console.log("calling from bottom-bar-->")
       this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
-        console.log("data in bottom bar-->",data)
-        this.chatService.chatListPushRevised('recieved', data)
+       
+          this.chatService.chatListPushRevised('recieved', data)
+       
+        // this.chatService.chatListPush('recieved', data)
       },err => {
-        console.log("error in bottom bat-->",err)
         this.chatService.chatListPushRevised('recieved', err.error)
       });
     }

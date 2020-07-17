@@ -35,12 +35,6 @@ export class ChatLibService {
     
     return this.http.post(this.chatbotUrl, req.data).pipe(
       mergeMap((data: any) => {
-        console.log("requets in service-->",req)
-        console.log("data in service-->",data)
-        // if (data.responseCode !== 'OK') {
-        //   console.log("reesponse NOK")
-        //   return observableThrowError(data);
-        // }
         return observableOf(data);
       }));
   }
@@ -53,16 +47,24 @@ export class ChatLibService {
   }
 
   chatListPushRevised(source, msg) {
-    console.log("msg-->",msg)
-    console.log("buttons-->",msg.data.buttons)
-    console.log("text-->",msg.data.text)
-    console.log("length-->", msg.data.buttons?msg.data.buttons.length:0)
-    console.log("1st button",msg.data.buttons[0])
+    if(msg.data.button){
+      for(var val of msg.data.buttons){ 
+        val.disabled = false
+      }
+    }
+   
     const chat = {
       'buttons': msg.data.buttons,
       'text': msg.data.text,
       'type': source
     }
     this.chatList.push(chat);
+  }
+
+  disableButtons() {
+    var btns =  this.chatList[this.chatList.length-1].buttons
+    for(var val of btns){
+      val.disabled = true
+    }
   }
 }
