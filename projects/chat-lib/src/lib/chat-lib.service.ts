@@ -31,7 +31,6 @@ export class ChatLibService {
     req.data['channel'] = this.channel;
     req.data['From'] = (this.did).toString();
     req.data['context'] = this.context;
-    console.log("this.chatbotUrl-->", this.chatbotUrl)
     
     return this.http.post(this.chatbotUrl, req.data).pipe(
       mergeMap((data: any) => {

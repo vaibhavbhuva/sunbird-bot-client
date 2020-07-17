@@ -39,8 +39,5 @@
       }
     }
   },
-  "defaultProject": "chat-lib",
-  "cli": {
-    "analytics": "adcd2644-9f06-4fd7-a679-3aec144f24ad"
-  }
+  "defaultProject": "chat-lib"
 }

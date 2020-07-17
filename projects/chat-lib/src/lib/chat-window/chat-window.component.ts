@@ -11,7 +11,6 @@ export class ChatWindowComponent implements OnInit {
   isImageFromSrc: boolean = false;
   constructor() { }
   ngOnInit() {
-    console.log("inside chatlib")
     this.inputValues.collapsed = true;
     this.isImageFromSrc = this.inputValues.imageUrl ? true : false
     this.inputValues.title = this.inputValues.title ? this.inputValues.title : 'Ask Bot'
