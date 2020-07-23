@@ -38,11 +38,9 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
           }
         }
       this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
-        console.log(data)
-        this.chatService.chatListPush('recieved', data.text)
+        this.chatService.chatListPushRevised('recieved', data)
       },err => {
-        console.log(err)
-        this.chatService.chatListPush('recieved', err.error.text)
+        this.chatService.chatListPushRevised('recieved', err.error.data)
       });
     }
   }

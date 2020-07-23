@@ -19,29 +19,25 @@ export class ChatMessageBottomBarComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.initialiseForm();
   }
-  // initialiseForm () {
-  //   this.messageForm = new FormGroup({
-  //     message: new FormControl('', Validators.required)
-  //   });
-  // }
+
   sendMessage() {
     let msg = this.messageForm.controls.message.value;
     if(msg) { 
       this.chatService.chatListPush('sent',msg);
       this.messageForm.controls.message.reset();
-;      const req = {
+      const req = {
         data: {
           Body: msg
           }
         }
       this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
-        console.log(data)
-        this.chatService.chatListPush('recieved', data.text)
+       
+          this.chatService.chatListPushRevised('recieved', data)
+       
+        // this.chatService.chatListPush('recieved', data)
       },err => {
-        console.log(err)
-        this.chatService.chatListPush('recieved', err.error.text)
+        this.chatService.chatListPushRevised('recieved', err.error)
       });
     }
     }
