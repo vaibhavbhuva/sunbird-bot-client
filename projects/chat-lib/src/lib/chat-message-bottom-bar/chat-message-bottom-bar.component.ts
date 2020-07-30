@@ -32,10 +32,7 @@ export class ChatMessageBottomBarComponent implements OnInit {
           }
         }
       this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
-       
           this.chatService.chatListPushRevised('recieved', data)
-       
-        // this.chatService.chatListPush('recieved', data)
       },err => {
         this.chatService.chatListPushRevised('recieved', err.error)
       });

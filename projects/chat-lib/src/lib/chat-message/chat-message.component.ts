@@ -25,7 +25,7 @@ export class ChatMessageComponent implements OnInit {
   }
 
   buttonClicked(indx, text){
-    if(text === "First Menu"){
+    if(text === "Main Menu"){
       indx="0"
     }
     if(text === "Go Back"){
@@ -47,7 +47,6 @@ export class ChatMessageComponent implements OnInit {
 
   sendMessage(req) {
     this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
-      
       this.chatService.chatListPushRevised('recieved', data)
       
     },err => {
