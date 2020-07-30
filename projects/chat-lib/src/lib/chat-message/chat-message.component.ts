@@ -25,12 +25,6 @@ export class ChatMessageComponent implements OnInit {
   }
 
   buttonClicked(indx, text){
-    if(text === "Main Menu"){
-      indx="0"
-    }
-    if(text === "Go Back"){
-      indx="99"
-    }
     this.disableButtons()
     this.chatService.chatListPush('sent',text);
     const req = {

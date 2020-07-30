@@ -4,8 +4,8 @@
         <div [innerHTML]="data.text">
         </div>
         <div *ngIf="isButtonAvailable" class="btn-cover my-5px">
-            <div class="my-5px mr-5px" *ngFor='let btn of buttons; let indx = index'>
-                <button type="button" [disabled]= "btn.disabled" class="btn-primary" (click)="buttonClicked(indx+1,btn.text)">{{btn.text}}</button>
+            <div class="my-5px mr-5px" *ngFor='let btn of buttons'>
+                <button type="button" [disabled]= "btn.disabled" class="btn-primary" (click)="buttonClicked(btn.value,btn.text)">{{btn.text}}</button>
             </div>
         </div>
     </div>
