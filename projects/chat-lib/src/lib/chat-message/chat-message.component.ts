@@ -25,12 +25,6 @@ export class ChatMessageComponent implements OnInit {
   }
 
   buttonClicked(indx, text){
-    if(text === "First Menu"){
-      indx="0"
-    }
-    if(text === "Go Back"){
-      indx="99"
-    }
     this.disableButtons()
     this.chatService.chatListPush('sent',text);
     const req = {
@@ -47,7 +41,6 @@ export class ChatMessageComponent implements OnInit {
 
   sendMessage(req) {
     this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
-      
       this.chatService.chatListPushRevised('recieved', data)
       
     },err => {
