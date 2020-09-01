@@ -47,11 +47,16 @@
     color: #fff;
     position: relative;
     img {
-        height: 70px;
+        height: 55px;
+    }
+    .bot-logo{
+        margin-top: -41px;
+        height: 111px;
     }
     .heading {
-        margin-left: 0.5rem;
+        margin-left: 1.5rem;
         flex: 1 1 auto;
+        font-size: 1.2rem;
     }
     .close-container {
         background: rgba(255,255,255,.3);
@@ -111,36 +116,39 @@
         background-color: #FFFFFF;
         box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
         position: relative;
-        border-radius: 0.3rem;
-        margin-top: 25px;
+        border-radius: 0.6rem;
+        margin-top: 15px;
+        right: 10px;
         & ::after{
-            content: '';
-            display: block;
+            content: ' ';
             position: absolute;
-            top: 14px;
-            right: -4px;
-            width: 6px;
-            height: 6px;
-            background: #fff;
-            border-right: 1px solid #024f9d;
-            border-bottom: 1px solid #024f9d;
+            width: 0;
+            height: 0;
+            left: auto;
+            right: -5px;
+            bottom: -13px;
+            border: 12px solid;
+            border-color: #024f9d #024f9d transparent transparent;
+
             -moz-transform: rotate(-45deg);
             -webkit-transform: rotate(-45deg);
-            border-radius: 2px;
+            border-radius: 0.6px;
         }
     }
     .chatboxText {
         text-align: center;
-        color: #024f9d;
+        background: #024f9d;
+        color: #FFFFFF;
         font-family: "Noto Sans";
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 700;
         letter-spacing: 0;
         line-height: 22px;
-        padding: .4rem 0.6rem;
+        padding: .4rem 1.2rem;
+        border-radius: 0.5rem;
     }
     .chatboxImg{
-        width: 88px;
+        width: 90px;
         margin-left: -5px;
     }
     .defaultImg{
