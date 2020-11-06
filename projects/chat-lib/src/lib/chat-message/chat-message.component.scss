@@ -33,6 +33,18 @@
         color: #ffffff;
     }
 }
+.btn-info{
+    background: #ffffff;
+    border: 1px #024f9d;
+    color: #024f9d;
+    padding: 8px 12px;
+    border-radius: 16px;
+    font-size: 11px;
+    &:hover{
+        background: #024f9d;
+        color: #ffffff;
+    }
+}
 .mr-5px{
     margin-right: 5px;
 }
