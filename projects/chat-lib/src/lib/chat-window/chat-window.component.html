@@ -4,7 +4,7 @@
       <div class="chatbox">
         <div class="chatboxText">{{inputValues.title}}</div>
       </div>
-      <img [ngClass]="{'defaultImg': !isImageFromSrc, 'chatboxImg' : isImageFromSrc}" [src]="inputValues.imageUrl" />
+      <img alt="chatbox image" [ngClass]="{'defaultImg': !isImageFromSrc, 'chatboxImg' : isImageFromSrc}" [src]="inputValues.imageUrl" />
     </div>
     <div *ngIf="inputValues.collapsed===false">
       <div class="lib-chat-panel">
