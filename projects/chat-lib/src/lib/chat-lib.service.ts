@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { of as observableOf, throwError as observableThrowError, Observable } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { uuid } from 'uuidv4';
+import { UUID } from 'angular2-uuid';
+let uuid = UUID.UUID();
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class ChatLibService {
     if(!this.did) {
       this.did = Date.now();
     }
-    const headers = {'x-request-id': uuid() };
+    const headers = {'x-request-id': uuid };
     const options = { headers: headers };
     req.data['userId'] = this.userId;
     req.data['appId'] = this.appId;
