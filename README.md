@@ -8,7 +8,7 @@ To integrate the chatbot client library into portal use the below steps
 
 ## Step 1: Install the package
 
-   npm i sunbird-chatbot-client --save
+    npm i sunbird-chatbot-client --save
 
 
 ## Step 2: Import the modules and components
@@ -31,11 +31,11 @@ Import the NgModule for each component you want to use:
 
 ### botConfig properties:
 
-chatbotUrl: string  -> API endpoint for server communication to get the response for the user input
-appId: string       -> For Telemetry - Unique application indentifier 
-userId: string      -> For telemetry - User details who is interacting with the bot
-did: string         -> For telemetry - Unique device string for telemetry to log
-channel: string     -> For telemetry - Unique channel string to identify the use belongs to which tenant
+    chatbotUrl: string  -> API endpoint for server communication to get the response for the user input
+    appId: string       -> For Telemetry - Unique application indentifier 
+    userId: string      -> For telemetry - User details who is interacting with the bot
+    did: string         -> For telemetry - Unique device string for telemetry to log
+    channel: string     -> For telemetry - Unique channel string to identify the use belongs to which tenant
 
 
 
