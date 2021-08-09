@@ -1,9 +1,6 @@
 <div [ngClass]="{'chatboxDefault' : !isImageFromSrc, 'chat_bot': isImageFromSrc}">
   <div [ngClass]="{'lib-chat-expand' : !inputValues.collapsed, 'lib-chat-head': inputValues.collapsed}">
     <div class="chatbox-cover clickable" *ngIf="inputValues.collapsed===true" (click)="expandChatIntent()" tabindex="0">
-      <div class="chatbox">
-        <div class="chatboxText">{{inputValues.title}}</div>
-      </div>
       <img alt="chatbox image" [ngClass]="{'defaultImg': !isImageFromSrc, 'chatboxImg' : isImageFromSrc}" [src]="inputValues.imageUrl" />
     </div>
     <div *ngIf="inputValues.collapsed===false">
