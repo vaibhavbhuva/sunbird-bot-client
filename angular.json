@@ -15,12 +15,7 @@
             "tsConfig": "projects/chat-lib/tsconfig.lib.json",
             "project": "projects/chat-lib/ng-package.json"
           }
-        ,          "configurations": {
-            "production": {
-              "tsConfig": "projects/chat-lib/tsconfig.lib.prod.json"
-            }
-          }
-},
+        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
