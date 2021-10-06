@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/project
     docker:
-      - image: node:10.13.0-jessie 
+      - image: node:12.16.1-jessie 
     steps:  
       - checkout
       - run: npm install -g @angular/cli
@@ -22,7 +22,7 @@ jobs:
 
   test-case:
     docker:
-      - image: circleci/node:10.13.0
+      - image: circleci/node:12.13.0
     steps:
       - checkout
       - run:
