@@ -1,28 +1,8 @@
 version: 2.1
 jobs:
   build:
-    working_directory: ~/project
     docker:
-      - image: node:12.16.1-jessie 
-    steps:  
-      - checkout
-      - run: npm install -g @angular/cli
-      - run: yarn install
-      - run: ng build
-      - run:
-          name: Publish to NPM
-          command: |
-            if [ -z $CIRCLE_PR_NUMBER ]; then 
-              npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-              npm pack ~/project/dist/chat-lib
-              npm publish sunbird-chatbot-client-*     
-            else
-              echo "Nothing to publish!" 
-            fi
-
-  test-case:
-    docker:
-      - image: circleci/node:12.13.0
+      - image: circleci/node:12 .13.0
     steps:
       - checkout
       - run:
@@ -52,16 +32,3 @@ jobs:
       - run:
           name: Run SonarScan
           command: sonar-scanner
-
-            
-workflows:
-  version: 2.1
-  build_and_test:
-    jobs:
-      - test-case:
-      - build:
-          filters:
-            tags:
-              only: /release\-.*/
-            branches:
-              only: /nobuilds\.*/
