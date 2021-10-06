@@ -3,7 +3,6 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ChatMessageListComponent } from './chat-message-list.component';
 import { ChatLibService } from '../chat-lib.service';
-import { of } from 'rxjs';
 
 describe('ChatMessageListComponent', () => {
   let component: ChatMessageListComponent;
