@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "copy:assets": "node scripts/copy-assets",
-    "test-coverage": "ng test src --code-coverage=true --watch=false --sourceMap=false",
+    "test-coverage": "ng test src --code-coverage=true --watch=false --sourceMap=false"
   },
   "dependencies": {
     "@angular/animations": "^9.1.13",
