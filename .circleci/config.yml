@@ -25,6 +25,8 @@ jobs:
       - run:
           name: Run Tests
           command: npm run test-coverage
+      - store_artifacts:
+          path: coverage
       - run:
           name: install sonar scanner
           command: npm install -g sonarqube-scanner
