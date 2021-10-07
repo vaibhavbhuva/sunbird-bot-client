@@ -3,7 +3,7 @@ jobs:
   build:
     machine:
       # Ref: https://circleci.com/docs/2.0/configuration-reference/#available-machine-images
-      image: ubuntu-1604:202101-01
+      image: mage: ubuntu-2004:202010-01
     steps:
       - checkout
       - run:
