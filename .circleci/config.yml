@@ -30,10 +30,11 @@ jobs:
       - run:
           name: install sonar scanner
           command: |
+            cd /tmp
             wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
             unzip || sudo apt install unzip -y
             unzip sonar-scanner-cli-4.6.2.2472-linux.zip
-            export PATH=$PATH:${PWD}/sonar-scanner-4.6.2.2472-linux/bin
+            cd -
       - run:
           name: Run SonarScan
-          command: sonar-scanner
+          command: /tmp/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner
