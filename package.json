@@ -1,6 +1,6 @@
 {
-  "name": "chatbot-client-v8",
-  "version": "3.0.0",
+  "name": "chatbot-client",
+  "version": "3.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
