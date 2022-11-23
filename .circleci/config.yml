@@ -9,34 +9,18 @@ jobs:
           name: Check current version of node
           command: node -v
       - restore_cache:
-          name: Restore Yarn Package Cache
           keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
+            - node_modules_cache_{{ checksum "package-lock.json" }}
       - run:
-          name: Install Dependencies
-          command: yarn install --immutable
-      - save_cache:
-          name: Save Yarn Package Cache
-          key: yarn-packages-{{ checksum "yarn.lock" }}
-          paths:
-            - .yarn/cache
-            - .yarn/unplugged
-      # - run:
-      #     name: Run Tests
-      #     command: npm run test-coverage
-      - store_artifacts:
-          path: coverage
-      - run:
-          name: install sonar scanner
+          name: Install project dependencies
           command: |
-            cd /tmp
-            wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
-            unzip || sudo apt install unzip -y
-            unzip sonar-scanner-cli-4.6.2.2472-linux.zip
-            cd -
-      - run:
-          name: Run SonarScan
-          command: /tmp/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner
+            if [ ! -d "node_modules" ]; then
+            npm i -f
+            fi
+      - save_cache:
+          key: node_modules_cache_{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
       - run:
           name: Publish to NPM
           command: |
