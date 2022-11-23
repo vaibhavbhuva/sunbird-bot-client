@@ -41,9 +41,9 @@ jobs:
           name: Publish to NPM
           command: |
             if [ -z $CIRCLE_PR_NUMBER ]; then
-              npm run build
+              npm run build && npm pack ./dist/chat-lib
               echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
               npm publish ./dist/chat-lib
             else
-              npm run build && npm pack ./dist/notification
+              npm run build && npm pack ./dist/chat-lib
             fi  
