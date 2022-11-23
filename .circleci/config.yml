@@ -38,3 +38,13 @@ jobs:
       - run:
           name: Run SonarScan
           command: /tmp/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner
+      - run:
+          name: Publish to NPM
+          command: |
+            if [ -z $CIRCLE_PR_NUMBER ]; then
+              npm run build
+              echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+              npm publish ./dist/notification
+            else
+              npm run build && npm pack ./dist/notification
+            fi  
