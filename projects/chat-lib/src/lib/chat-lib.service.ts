@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { of as observableOf, throwError as observableThrowError, Observable } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { UUID } from 'angular2-uuid';
-let uuid = UUID.UUID();
+import { v4 as UUID } from 'uuid';
+let uuid = UUID();
 
 @Injectable({
   providedIn: 'root'

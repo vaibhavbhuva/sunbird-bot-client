@@ -1,12 +1,11 @@
 {
   "name": "@project-sunbird/chatbot-client",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "dependencies": {
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
     "@angular/common": "^9.1.13",
     "@angular/core": "^9.1.13",
-    "angular2-uuid": "^1.1.1"
   }
 }
