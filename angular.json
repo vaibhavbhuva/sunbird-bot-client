@@ -30,18 +30,6 @@
             "tsConfig": "projects/chat-lib/tsconfig.spec.json",
             "karmaConfig": "projects/chat-lib/karma.conf.js"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/chat-lib/tsconfig.lib.json",
-              "projects/chat-lib/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     }
