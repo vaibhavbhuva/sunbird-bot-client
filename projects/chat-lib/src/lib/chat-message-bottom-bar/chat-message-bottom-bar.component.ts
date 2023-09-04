@@ -14,6 +14,7 @@ export class ChatMessageBottomBarComponent implements OnInit {
     message: new FormControl('', Validators.required)
   });
   message: any;
+  typingLoader: boolean = false;
   public unsubscribe$ = new Subject<void>();
   constructor(public chatService: ChatLibService) {
   }
@@ -22,19 +23,20 @@ export class ChatMessageBottomBarComponent implements OnInit {
   }
 
   sendMessage() {
-    let msg = this.messageForm.controls.message.value;
-    if(msg) { 
-      this.chatService.chatListPush('sent',msg);
+    let query = this.messageForm.controls.message.value;
+    if(query) { 
+      this.chatService.chatListPush('sent',query);
       this.messageForm.controls.message.reset();
       const req = {
-        data: {
-          Body: msg
-          }
-        }
-      this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
+        query
+      }
+      this.typingLoader = true;
+      this.chatService.chatpostJugalbandi(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
           this.chatService.chatListPushRevised('recieved', data)
+          this.typingLoader = false;
       },err => {
         this.chatService.chatListPushRevised('recieved', err.error)
+        this.typingLoader = false;
       });
     }
     }

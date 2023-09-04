@@ -1,0 +1,22 @@
+# Exclude development and build-related files
+node_modules
+npm-debug.log
+yarn-error.log
+coverage
+e2e
+
+# Exclude editor/IDE specific files
+.idea
+.vscode
+
+# Exclude git files
+.git
+.gitignore
+
+.angular
+
+# Exclude other unnecessary files
+*.log
+*.swp
+*.swo
+

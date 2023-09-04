@@ -3,18 +3,18 @@
     <div class="chatbox-cover clickable" role="button" attr.aria-label="{{inputValues.header}}" *ngIf="inputValues.collapsed===true" (click)="expandChatIntent()" tabindex="0">
       <img alt="{{inputValues.header}} image" [ngClass]="{'defaultImg': !isImageFromSrc, 'chatboxImg' : isImageFromSrc}" [src]="inputValues.imageUrl" />
     </div>
-    <div *ngIf="inputValues.collapsed===false">
+    <ng-container *ngIf="inputValues.collapsed===false">
       <div class="lib-chat-panel">
         <div class="lib-chat-header">
           <img [src]="inputValues.imageUrl" class="bot-logo" alt="chatbot-logo" />
           <span class="heading">{{inputValues.header}}</span>
-          <span class="close-container clickable" (click)="collapseChatIntent()" role="button" attr.aria-label="Close {{inputValues.header}}" tabindex="0">
+          <!-- <span class="close-container clickable" (click)="collapseChatIntent()" role="button" attr.aria-label="Close {{inputValues.header}}" tabindex="0">
             <img alt="close chatbot section"
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAJKADAAQAAAABAAAAJAAAAAAJxsHGAAAA30lEQVRYCe2VYQrDMAiFy06Qo+z+f5YbbTdI3wMFC62x0Do2DIghNfHzRZplqVEKlAKlQCnwJwqMMRrsBXtGS2Ks7GnRPeE4HNxhHG/YFIoxEgs3ejhRNFASfHg6hguF7xaGe6YFRDk2cZLIhUqDUTIPKh3Gg/oajAPFvuK4r2c0+ZFHcjav9tQlMI+jZCfWh4m1c7OcMBV17DWpUu4v4Ra0HRhenb2+PKg9GK06HcqDSYeKwKRCAUgfVzbv9G2SArTRu8Je5pGgCdQURpMKFAtpula+FCgFSoFS4NcVWAGK4NpYw1/dMAAAAABJRU5ErkJggg==" />
-          </span>
+          </span> -->
         </div>
-        <div class="lib-chat-body">
-          <lib-chat-message-list [did]="inputValues.did" [userId]="inputValues.userId" [channel]="inputValues.channel"
+        <div class="lib-chat-body"> 
+          <lib-chat-message-list [did]="inputValues.did" [qaID]="inputValues.uuid" [userId]="inputValues.userId" [channel]="inputValues.channel"
             [appId]="inputValues.appId" [chatbotUrl]="inputValues.chatbotUrl" [context]="inputValues.context">
           </lib-chat-message-list>
         </div>
@@ -22,6 +22,6 @@
           <lib-chat-message-bottom-bar></lib-chat-message-bottom-bar>
         </div>
       </div>
-    </div>
+    </ng-container>
   </div>
 </div>

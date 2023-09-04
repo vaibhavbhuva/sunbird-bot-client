@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "copy:assets": "node scripts/copy-assets",
-    "test-coverage": "ng test --code-coverage=true --watch=false --sourceMap=false"
+    "test-coverage": "ng test --code-coverage=true --watch=false --sourceMap=false",
+    "build:prod": "npm run build && ng build --configuration=production"
   },
   "dependencies": {
     "@angular/animations": "^13.3.12",

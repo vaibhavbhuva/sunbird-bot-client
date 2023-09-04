@@ -16,6 +16,7 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
   @Input() appId: string;
   @Input() chatbotUrl:string;
   @Input() context:string;
+  @Input() qaID:string;
 
   public array = [
   ];
@@ -30,19 +31,20 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
     this.chatService.appId = this.appId || null;
     this.chatService.chatbotUrl = this.chatbotUrl || null;
     this.chatService.context = this.context || null;
+    this.chatService.qaID = this.qaID;
     
-    if (this.array.length === 0 ) {
-      const req = {
-        data: {
-          Body: "0"
-          }
-        }
-      this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
-        this.chatService.chatListPushRevised('recieved', data)
-      },err => {
-        this.chatService.chatListPushRevised('recieved', err.error.data)
-      });
-    }
+    // if (this.array.length === 0 ) {
+    //   const req = {
+    //     data: {
+    //       Body: "0"
+    //       }
+    //     }
+    //   this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
+    //     this.chatService.chatListPushRevised('recieved', data)
+    //   },err => {
+    //     this.chatService.chatListPushRevised('recieved', err.error.data)
+    //   });
+    // }
   }
 
   ngAfterViewChecked() {

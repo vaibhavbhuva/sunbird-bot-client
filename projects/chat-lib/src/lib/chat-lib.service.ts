@@ -19,9 +19,11 @@ export class ChatLibService {
   public channel;
   public chatbotUrl;
   public context;
-
+  public qaID;
   constructor(http: HttpClient) {
     this.http = http;
+    const data = this.retrieveData('chat_history'); 
+    this.chatList = data ? data : [];
   }
 
   chatpost(req?: any): Observable<any> {
@@ -40,27 +42,76 @@ export class ChatLibService {
         return observableOf(data);
       }));
   }
+
+  chatpostJugalbandi(req?: any): Observable<any> {
+   
+    const options = { 
+      params: {
+        uuid_number: this.qaID,
+        query_string: req.query,
+        skip_cache: true
+      }
+     };
+    return this.http.get(this.chatbotUrl + '/generate_answers', options).pipe(
+      mergeMap((data: any) => {
+        return observableOf(data);
+      }));
+  }
+
+  recordFeedback(req?: any): Observable<any> {
+    return this.http.put(this.chatbotUrl + "/user_feedback", req).pipe(
+      mergeMap((data: any) => {
+        return observableOf(data);
+      }));
+  }
+
+
   chatListPush(source, msg) {
     const chat = {
       'text': msg,
       'type': source
     }
     this.chatList.push(chat);
+    this.storeData('chat_history', this.chatList);
   }
 
   chatListPushRevised(source, msg) {
-    if(msg.data.button){
-      for(var val of msg.data.buttons){ 
-        val.disabled = false
-      }
+    if(!msg.button){
+      msg["buttons"] = [{
+            "text": "👍",
+            "value": "up"
+        },
+        {
+            "text": "👎",
+            "value": "down"
+        }]
     }
    
     const chat = {
-      'buttons': msg.data.buttons,
-      'text': msg.data.text,
-      'type': source
+      'buttons': msg.buttons,
+      'text': msg.answer ? msg.answer : msg,
+      'type': source,
+      ...(msg?.id && { id: msg.id })
     }
     this.chatList.push(chat);
+    this.storeData('chat_history', this.chatList);
+  }
+
+  // Function to store data in session storage
+  storeData(key, value) {
+    // Using plain sessionStorage
+    sessionStorage.setItem(key, JSON.stringify(this.chatList));
+  }
+
+  // Function to retrieve data from session storage
+  retrieveData(key: string) {
+    // Using plain sessionStorage
+    const storedValue = sessionStorage.getItem(key);
+    try {
+      return JSON.parse(storedValue);
+    } catch (error) {
+      return undefined;
+    }
   }
 
   disableButtons() {

@@ -32,6 +32,7 @@ Import the NgModule for each component you want to use:
 ### botConfig properties:
 
     chatbotUrl: string  -> API endpoint for server communication to get the response for the user input
+    uuid: string        -> Unique indentifier for uploaded information
     appId: string       -> For Telemetry - Unique application indentifier 
     userId: string      -> For telemetry - User details who is interacting with the bot
     did: string         -> For telemetry - Unique device string for telemetry to log

@@ -24,15 +24,14 @@ export class ChatMessageComponent implements OnInit {
     this.buttons = this.data.buttons?this.data.buttons:''
   }
 
-  buttonClicked(indx, text){
+  buttonClicked(value, text, id) {
     this.disableButtons()
     this.chatService.chatListPush('sent',text);
-    const req = {
-      data: {
-        Body: indx
-        }
-      }
-    this.sendMessage(req)
+    const formData = new FormData();
+    // append your data
+    formData.append('question_id', id);
+    formData.append('feedback_type', value);
+    this.sendMessage(formData)
   }
 
   disableButtons(){
@@ -40,11 +39,12 @@ export class ChatMessageComponent implements OnInit {
   }
 
   sendMessage(req) {
-    this.chatService.chatpost(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
-      this.chatService.chatListPushRevised('recieved', data)
-      
+    this.chatService.recordFeedback(req).pipe(takeUntil(this.unsubscribe$)).subscribe(data => {
+      // this.chatService.chatListPushRevised('recieved', data)
+      console.log(data);
     },err => {
-      this.chatService.chatListPushRevised('recieved', err.error)
+      // this.chatService.chatListPushRevised('recieved', err.error)
+      console.log(err);
     });
   }
 }
