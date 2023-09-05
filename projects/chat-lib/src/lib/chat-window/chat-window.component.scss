@@ -55,6 +55,8 @@
     padding: 16px;
     color: #fff;
     position: relative;
+    box-shadow: 0 3px 5px -1px #00000036, 0 6px 10px #782d14, 0 1px 18px #71311c;
+    margin-bottom: 3px;
     img {
         height: 55px;
     }
@@ -80,7 +82,7 @@
     // height: 28rem;
     flex-grow: 1;
     width: 100%;
-    background-color: #fefdf5;
+    background-color: #eeeae9;
     overflow-y: hidden;
     // overflow-y: auto;
 }
