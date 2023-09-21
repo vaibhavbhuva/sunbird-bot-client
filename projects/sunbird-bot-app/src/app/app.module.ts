@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {ChatLibModule, ChatLibService} from 'chat-lib';
-
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    ChatLibModule
+    ChatLibModule,
+    RouterModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

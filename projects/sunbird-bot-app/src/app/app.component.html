@@ -1,1 +1,5 @@
-<lib-chat-window [inputValues]="botConfig"></lib-chat-window>
+
+<ng-container *ngIf="botConfig">
+    <lib-chat-window [inputValues]="botConfig"></lib-chat-window>
+</ng-container>
+
