@@ -32,7 +32,11 @@ export class ChatMessageListComponent implements OnInit, AfterViewChecked {
     this.chatService.chatbotUrl = this.chatbotUrl || null;
     this.chatService.context = this.context || null;
     this.chatService.qaID = this.qaID;
-    
+    const sunbirdRCDefaultMsg = "Hello! I'm here to provide assistance with any questions you might have regarding the functional aspects of Sunbird RC, encompassing topics such as verifiable credentials and electronic registries. Additionally, I can address your inquiries about the high-level architecture of Sunbird RC. If I can't assist you, I'll do my best to direct you to the right resources."
+    if(this.qaID === "5d921c7e-5846-11ee-b27d-acde48001122" && sessionStorage.getItem('initialMsg') != "True") {
+      this.chatService.chatListPush('recieved', sunbirdRCDefaultMsg)
+      sessionStorage.setItem('initialMsg', "True");
+    }
     // if (this.array.length === 0 ) {
     //   const req = {
     //     data: {

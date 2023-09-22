@@ -122,5 +122,6 @@ export class ChatLibService {
       }
       btn.disabled = true
     }
+    this.storeData('chat_history', this.chatList);
   }
 }
