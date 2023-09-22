@@ -1,7 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { ChatLibService } from '../chat-lib.service';
 import { takeUntil } from 'rxjs/operators';
 import { Subject} from 'rxjs';
+
+declare const marked:any;
 
 @Component({
   selector: 'lib-chat-message',
@@ -22,6 +24,10 @@ export class ChatMessageComponent implements OnInit {
       this.buttons = this.data.buttons
     }
     this.buttons = this.data.buttons?this.data.buttons:''
+  }
+
+  parseMardownText(text) {
+    return  marked.parse(text);
   }
 
   buttonClicked(value, text, id) {
