@@ -25,7 +25,7 @@ export class ChatMessageComponent implements OnInit {
   }
 
   buttonClicked(value, text, id) {
-    this.disableButtons()
+    this.disableButtons(value)
     this.chatService.chatListPush('sent',text);
     const formData = new FormData();
     // append your data
@@ -34,8 +34,8 @@ export class ChatMessageComponent implements OnInit {
     this.sendMessage(formData)
   }
 
-  disableButtons(){
-    this.chatService.disableButtons()
+  disableButtons(value){
+    this.chatService.disableButtons(value)
   }
 
   sendMessage(req) {
